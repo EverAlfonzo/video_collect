@@ -5,6 +5,8 @@ class Signo(models.Model):
     nombre = models.CharField(max_length=50)
     video = models.URLField()  # Url al Video
 
+    def __str__(self):
+        return self.nombre
 
 class VideoEntrenamiento(models.Model):
     signo = models.ForeignKey(Signo, models.CASCADE, 'signo')

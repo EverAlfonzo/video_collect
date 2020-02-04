@@ -1,0 +1,16 @@
+{% extends 'layout/layout.html' %}
+{% load crispy_forms_tags crispy_forms_filters%}
+
+{% block header_content %}
+    <div class="container">
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% crispy form %}
+        </form>
+
+    </div>
+    {#        <div class="fieldWrapper">#}
+    {#            {{ field.errors }}#}
+    {#            {{ field.label_tag }} {{ field }}#}
+    {#        </div>#}
+{% endblock %}
