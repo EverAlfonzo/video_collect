@@ -1,5 +1,5 @@
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Submit
+from crispy_forms.layout import Submit, Layout, Fieldset
 from dal import autocomplete
 from django import forms
 
@@ -24,3 +24,11 @@ class VideoEntrenamientoForm(forms.ModelForm):
         self.helper.label_class = 'col-lg-2'
         self.helper.field_class = 'col-lg-8'
         self.helper.add_input(Submit('submit', 'Submit'))
+        self.helper.layout = Layout(
+            Fieldset(
+                'Subir tu aporte al proyecto',
+                'signo',
+                'video',
+                'video_entrenamiento',
+            )
+        )
