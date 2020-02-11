@@ -7,17 +7,20 @@ from videocollect.models import VideoEntrenamiento
 
 
 class VideoEntrenamientoForm(forms.ModelForm):
-    video = forms.URLField()
+    video = forms.URLField(required=False)
+    video_entrenamiento_file = forms.FileField()
 
     class Meta:
         model = VideoEntrenamiento
         fields = '__all__'
         widgets = {
-            'signo': autocomplete.ModelSelect2(url='signo-autocomplete')
+            'signo': autocomplete.ModelSelect2(url='signo-autocomplete'),
         }
 
     def __init__(self, *args, **kwargs):
         super(VideoEntrenamientoForm, self).__init__(*args, **kwargs)
+        self.fields['video_entrenamiento'].widget.attrs['hidden'] = True
+
         self.helper = FormHelper()
         self.helper.form_id = 'id-video-upload-form'
         self.helper.form_class = 'form-horizontal'
@@ -29,6 +32,7 @@ class VideoEntrenamientoForm(forms.ModelForm):
                 'Subir tu aporte al proyecto',
                 'signo',
                 'video',
-                'video_entrenamiento',
+                'video_entrenamiento_file'
             )
         )
+

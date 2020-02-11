@@ -8,7 +8,12 @@ class Signo(models.Model):
     def __str__(self):
         return self.nombre
 
+
 class VideoEntrenamiento(models.Model):
     signo = models.ForeignKey(Signo, models.CASCADE, 'signo')
-    video_entrenamiento = models.FileField()
+    video_entrenamiento = models.URLField(null=False, blank=True)
     fecha_hora_subida = models.DateTimeField(blank=True, auto_now_add=True)
+
+
+    def __str__(self):
+        return 'Video Entrenamiento de:' +self.signo.nombre

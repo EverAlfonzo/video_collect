@@ -15,20 +15,29 @@
         {% block content %}
 
 
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div {% if message.tags %} class="{{ message.tags }}{% endif %} alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
             <div class="wrapper-md">
                 {% block contenido %}
 
                     <div class="container card " style="margin-top: 1rem;">
                         {% block titulo %}
-{#                            <div class="row bg-light lter b-b wrapper">#}
-{#                                <h1 class="col-lg-5 m-n font-thin h3">Subir Aporte!</h1>#}
-{#                            </div>#}
+                            {#                            <div class="row bg-light lter b-b wrapper">#}
+                            {#                                <h1 class="col-lg-5 m-n font-thin h3">Subir Aporte!</h1>#}
+                            {#                            </div>#}
                         {% endblock %}
-                            <form style="margin-top: 1rem;" method="post" novalidate>
-                                {% csrf_token %}
-                                {% crispy form %}
-                            </form>
+                        <form style="margin-top: 1rem;" method="post" novalidate enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% crispy form %}
+                        </form>
 
                     </div>
                 {% endblock %}
@@ -39,5 +48,5 @@
 </div>
 
 {% block extra_js %}
-<script src="{% static 'videocollect/video_entrenamiento/js/videoentrenamiento.js' %}"></script>
+    <script src="{% static 'videocollect/video_entrenamiento/js/videoentrenamiento.js' %}"></script>
 {% endblock %}

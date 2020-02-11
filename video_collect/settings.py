@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'videocollect',
+    'videocollect.apps.VideocollectConfig',
     'crispy_forms',
 ]
 
@@ -129,4 +129,8 @@ STATICFILES_DIRS = (
 
 # Crispy Forms
 
+MEGA_ACCOUNT = 'yourmegaacoountq@email.com'
+MEGA_PASS = 'yourmegapassword'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+DEFAULT_FILE_STORAGE = '/media/videos/'
