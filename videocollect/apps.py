@@ -14,7 +14,5 @@ class VideocollectConfig(AppConfig):
 
     @classmethod
     def connect_to_mega(cls):
-        print('Trying to logging in')
         mega = Mega()
         cls.mconnect = mega.login(MEGA_ACCOUNT, MEGA_PASS)
-        print('Finished to logged in')
