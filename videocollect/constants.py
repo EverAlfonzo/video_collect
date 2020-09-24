@@ -1,0 +1,2 @@
+
+MAX_VIDEOS = 3
