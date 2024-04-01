@@ -15,6 +15,6 @@ class SignoAutocomplete(autocomplete.Select2QuerySetView):
         if self.q:
             qs = qs.filter(nombre__contains=self.q)
         else:
-            qs = qs[:10]
+            qs = qs[:70]
 
         return qs
