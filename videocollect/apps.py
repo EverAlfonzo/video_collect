@@ -15,4 +15,6 @@ class VideocollectConfig(AppConfig):
     @classmethod
     def connect_to_mega(cls):
         mega = Mega()
+        print(MEGA_ACCOUNT)
+        print(MEGA_PASS)
         cls.mconnect = mega.login(MEGA_ACCOUNT, MEGA_PASS)

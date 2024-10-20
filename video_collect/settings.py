@@ -25,7 +25,7 @@ SECRET_KEY = 'w^=v*#&p7cxu*@a+*af--l@%032ml$ypk4evm0u%kcw(fb1rdu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -107,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-PY'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Asuncion'
 
 USE_I18N = True
 
@@ -126,11 +126,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Crispy Forms
 
-MEGA_ACCOUNT = 'yourmegaacoountq@email.com'
-MEGA_PASS = 'yourmegapassword'
+MEGA_ACCOUNT = 'everalfon1994@gmail.com'
+MEGA_PASS = '#Dinosaurio1994'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DEFAULT_FILE_STORAGE = '/media/videos/'
